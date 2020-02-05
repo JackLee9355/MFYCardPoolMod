@@ -7,3 +7,5 @@ Mods YGOPRO card pool for a custom format.
 3. Run update.bat.
 
 Rerun the bat file to update. 
+
+[test](../master/update.bat)
