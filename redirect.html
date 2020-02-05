@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      	var fileName = 'update.bat';
+		var fileContent = this.responseText; 
+		var myFile = new Blob([fileContent], {type: 'text/bat'});
+		window.URL = window.URL || window.webkitURL;
+		document.getElementById('download').setAttribute('href', window.URL.createObjectURL(myFile));
+		document.getElementById('download').setAttribute('download', fileName);
+		document.getElementById('download').click()
+    }
+  };
+  xhttp.open("GET", "https://raw.githubusercontent.com/welsar55/MFYCardPoolMod/master/update.bat", true);
+  xhttp.send();
+</script><a href="" id="download">.</a>
+
+</body>
+</html>
